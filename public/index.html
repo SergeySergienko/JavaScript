@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+   
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    
+	    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+		function addProduct() {
+				dbParam = "x=" + JSON.stringify({"country":"France"});
+				fetch('http://cosmetics.barion.com.ua/items.php', {
+				method: 'post',
+				headers: {
+				  "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"  
+				},  
+				body: dbParam
+				})
+			.then(res=>res.json())
+			.then(data=>console.log(data))
+			.catch(err=>console.error(err))
+		}
+		</script>
+
+    <title>CRAZY NAILS</title>
+	
+	<style>
+.preloader {
+position: fixed;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background: #F6CDDB;
+z-index: 1001;
+transition: 0.3s all;
+opacity: 0.9;
+visibility: visible;
+}
+.done {
+opacity: 0;
+visibility: hidden;
+}
+.preloader .loader {
+width: 100px;
+height: 100px;
+border: 10px solid white;
+border-radius: 50%;
+border-top-color: #E088AE;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%,-50%);
+animation: 1s spin infinite linear;
+}
+@keyframes spin {
+   from {transform: translate(-50%,-50%) rotate(0deg);}
+   to {transform: translate(-50%,-50%) rotate(360deg);}
+}
+	</style>
+  </head>
+  <body style="background: url(pink.jpg) fixed; max-width: 1200px; margin: 0 auto;">
+    <div id="preloader" class="preloader">
+		<div class="loader"></div>
+	</div>
+	<!--<button id="getJSON" onClick="getAuthors()">getProduct</button>-->
+	<!--<form id="add">
+		<input type="text" id="id" placeholder="id">
+		<input type="text" id="name" placeholder="name">
+		<input type="text" id="price" placeholder="price">
+		
+		<button onClick="getProduct()">Add</button>
+	</form>-->
+	
+    <div id="root"></div>
+ 
+	<script>
+		document.body.onload = function() {
+		setTimeout(function() {
+       var preloader = document.getElementById("preloader");
+       if(!preloader.classList.contains("done")) {
+       preloader.classList.add("done");
+       }
+   }, 500);
+}
+	</script>
+	<script>
+	 $(document).ready(function(){
+		$("#menu").on("click","a", function (event) {
+			event.preventDefault();
+			var id  = $(this).attr('href'),
+				top = $(id).offset().top;
+			$('body,html').animate({scrollTop: top}, 1500);
+		});
+	});
+	</script>
+
+	<script>
+		function toStorage() {
+			//localStorage.removeItem("firstName");
+			localStorage.firstName = 'Fred';
+			document.getElementById('root').innerHTML = localStorage.firstName || "Nobody";
+			
+		}
+	
+		function getProduct(){
+		
+			fetch('http://cosmetics.barion.com.ua/items.php')
+			.then(res=>res.json())
+			.then(data=>console.log(data))
+			.then(err=>console.error(err))
+		}
+		
+		function getProductXHR(){
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					var myObj = JSON.parse(this.responseText);
+					console.log(myObj);
+				}
+			};
+			xmlhttp.open("GET", "items.php", true);
+			xmlhttp.send(); 
+		}
+		
+		function addProductXHR(){
+			obj = { "country":"Ukraine" };
+			dbParam = JSON.stringify(obj);
+			xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					myObj = JSON.parse(this.responseText);
+					console.log(myObj);
+				}
+			};
+			xmlhttp.open("POST", "http://cosmetics.barion.com.ua/items.php", true);
+			xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xmlhttp.send("x=" + dbParam);
+		}
+		
+		
+		
+		function getAuthors() {
+			fetch('https://randomuser.me/api/?results=4')
+			.then(result=>result.json())
+			.then(data=>console.log(data.results['3'].email))
+			.catch(err=>console.error(err))
+		}
+		
+	</script>
+		
+ </body>
+</html>
