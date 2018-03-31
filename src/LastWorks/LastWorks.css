@@ -1,0 +1,27 @@
+.last_works {
+	min-height: 60vh;
+	text-align: center;
+	background: #F6CDDB;
+	padding: 1px;
+}
+.last_works ol {
+	margin-bottom: 30px;
+}
+.last_works li {
+	display: inline-block;
+	margin: 5px; 
+	padding: 1px; 
+	background: #f8e9e6;
+	border: 1px solid pink;
+}
+.last_works li:hover {
+	background: white;
+	border: 1px solid white;
+	box-shadow: 2px 2px 4px #636363;
+}
+.last_works li p {
+	margin: 5px;
+	font-family: arial;
+	font-size: 15px;
+	color: #f51c74;
+}

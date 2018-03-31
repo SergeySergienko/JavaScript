@@ -1,0 +1,19 @@
+ol, ul {
+	padding: 0;
+}
+
+li a {
+	text-decoration: none;
+	color: #444;
+}
+
+.float-left {
+	float: left;
+}
+.float-right {
+	float: right;
+}
+
+
+
+

@@ -1,0 +1,30 @@
+header {
+	width: 1200px;
+	height: 60px;
+	background: #f8e9e6;
+	position: fixed;
+	top: 0;
+	text-align: right;
+	-webkit-box-shadow: 0px 3px 5px #636363;
+	box-shadow: 0px 3px 5px #636363;
+	z-index: 999;
+} 
+header #menu ul li {
+	display: inline-block;
+	margin: 0 20px; 
+	padding: 4px; 
+}
+header .logo-text {
+	font-size: 36px;
+	font-weight: bold;
+	font-family: Trebushet;
+	font-style: italic;
+	text-shadow: 0px 0px 0px black;
+	color: #f8e9e6;
+	margin: 25px 25px;
+	border: 2px solid;
+	border-radius: 10px;
+	padding: 10px;
+	background: black;
+	box-shadow: 0px 3px 5px #636363;
+}

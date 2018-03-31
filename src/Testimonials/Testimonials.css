@@ -1,0 +1,19 @@
+.testimonials {
+	padding-top: 50px;
+	min-height: 70vh;
+	background: white;
+	text-align: center;
+}
+.testimonials ul li {
+	display: inline-block;
+	max-width: 31%;
+	padding: 1%;
+}
+.testimonials img {
+	height: 200px;
+	border-radius: 50%;
+}
+.testimonials p {
+	padding: 10px;
+	max-width: 500px;
+}
