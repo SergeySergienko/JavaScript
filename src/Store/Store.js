@@ -3,8 +3,8 @@ import { observable } from 'mobx';
 export default class Store {
   @observable images;
   @observable photos;
-  token = '4417915906.b6970d4.28e366a283a84256872046e361e2f322';
-  userid = 4417915906;
+  token = '';
+  userid = '';
   
   constructor(images, photos) {
         this.images = images;
