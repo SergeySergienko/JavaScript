@@ -18,7 +18,7 @@ class Testimonials extends React.Component {
 			<h3>ОТЗЫВЫ КЛИЕНТОВ</h3>
 			<ul>
 			{data.map(item => 
-				<li key = {item.id.value} className="float-left">
+				<li key = {item.login.sha1} className="float-left">
 					<img src={item.picture.large} alt={item.id.name} />
 						<p><i>"Lorem ipsum dolor sit amet consectetuer sit amet 
 						justo amet consectetuer sit amet justo et 

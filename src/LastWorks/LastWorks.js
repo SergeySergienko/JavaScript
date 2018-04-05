@@ -26,7 +26,7 @@ class LastWorks extends React.Component {
 				  <a href={item.link} target='_blank'><img src={item.images.thumbnail.url} alt='nails'/></a>
 				  <p>
 					  <span className='float-left'>❤ {item.likes.count}</span>
-					  <span className='float-left'>{item.caption.text.indexOf('\n')!==-1? item.caption.text.slice(item.caption.text.indexOf('\n')+1) :''}</span>
+						  {/*<span className='float-left'>{item.caption.text.indexOf('\n')!==-1? item.caption.text.slice(item.caption.text.indexOf('\n')+1) :''}</span>*/}
 					  <span className='float-right'>✉ {item.comments.count}</span>
 				  </p>
 				</li>
