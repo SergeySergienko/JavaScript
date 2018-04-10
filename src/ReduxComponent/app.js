@@ -10,11 +10,15 @@ import * as actions from './actions';
 //import 'babel-polyfill';
 import thunkMiddleware from 'redux-thunk';
 
+function logger(store, action) {
+	store.dispatch(action);
+	console.log('New state ', store.getState());
+}
+
 let state = [];
-
+let photosAmount = 3;
 const store = createStore(reducer, state, applyMiddleware(thunkMiddleware));
-
-store.dispatch(actions.fetchAll());
+logger(store, actions.fetchAll(photosAmount));
 
 const App = () => (
     <Provider store={store}>

@@ -10,8 +10,8 @@ class LastWorks extends React.Component {
 }
 
   render() {
-	  const {images} = this.props.store;
-	  const data = images.filter(image => image.tags.indexOf("nails") !== -1).slice(0,6);
+	  const {images, amount, add} = this.props.store;
+	  const data = images.filter(image => image.tags.includes("nails")).slice(amount-7,amount); //instead of (indexOf("nails") !== -1) use includes("nails")
 	  
     return (
 	<div className="last_works">
@@ -33,7 +33,7 @@ class LastWorks extends React.Component {
 				)
 		  }
       </ol>
-	  <button>Показать все работы</button>
+	  <button onClick={add}>Показать еще</button>
 	  </div>
     );
   }

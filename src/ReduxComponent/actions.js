@@ -1,13 +1,25 @@
 /**
  * Created by Сергей on 31.03.2018.
  */
+
+
+export const CHANGE_REVIEW = 'CHANGE_REVIEW'
+export function changeReview(step) {
+	return {
+		type: CHANGE_REVIEW,
+		step: step
+	}
+}
+ 
 export const FETCH_STARTED = 'FETCH_STARTED'
-export function fetchStarted() {
+export function fetchStarted(amount) {
   return {
     type: FETCH_STARTED,
 	status: 'loading...',
 	text: 'Data fetching gets started.',
-	data: []
+	data: [],
+	startPhoto: 0,
+	photosAmount: amount
   }
 }
 
@@ -30,11 +42,11 @@ export function fetchError(text) {
   }
 }
 
-export function fetchAll() {
+export function fetchAll(amount) {
   return function (dispatch) {
-    dispatch(fetchStarted());
+    dispatch(fetchStarted(amount));
 
-    return fetch('https://randomuser.me/api/?results=10')
+    return fetch('https://randomuser.me/api/?results=20')
       .then(response => response.json())
       .then(json => dispatch(fetchCompleted(json.results)))
       .catch(() => dispatch(fetchError('Oops!... Something has gone wrong...')));

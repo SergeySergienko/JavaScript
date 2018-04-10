@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Blog = () => (
-	<div className="blog">
+	<div className="blog float-left">
 		<h4>БЛОГ</h4>
 		<ul>
 			<li>Placerat bibendum</li>

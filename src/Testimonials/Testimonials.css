@@ -1,13 +1,15 @@
 .testimonials {
 	padding-top: 50px;
-	min-height: 70vh;
+	min-height: 80vh;
 	background: white;
 	text-align: center;
+}
+.testimonials ul {
+	margin-bottom: 30px;
 }
 .testimonials ul li {
 	display: inline-block;
 	max-width: 31%;
-	padding: 1%;
 }
 .testimonials img {
 	height: 200px;

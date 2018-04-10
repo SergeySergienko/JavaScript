@@ -3,12 +3,16 @@
  */
 import { connect } from 'react-redux';
 import Reviews from './components';
+import {changeReview} from './actions';
 
 const mapStateToProps = (state) => {
-  return state;
+	return state;
 };
 const mapDispatchToProps = (dispatch) => {
-  return {};
+	return {
+		   next: () => dispatch(changeReview(1)),
+		   prev: () => dispatch(changeReview(-1))
+	};
 };
 
 export const ReviewSelector = connect(mapStateToProps, mapDispatchToProps)(Reviews);

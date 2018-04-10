@@ -1,6 +1,7 @@
 .basement {
-	min-height: 300px;
+	min-height: 50vh;
 	background: black;
 	color: white;
 	text-align: center;
+	padding: 1px;
 }

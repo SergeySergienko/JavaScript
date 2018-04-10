@@ -9,7 +9,7 @@ import Store from '../Store/Store';
 import Basement from '../Basement/Basement';
 import './Home.css';
 
-const store = new Store([],[]);
+const store = new Store([],[],7);
 
 const Home = () => (
   <div id="home" className="home">
